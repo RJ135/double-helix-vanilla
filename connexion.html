@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" contentç="Cloud français écologique. Offres de stockage et de sauvegarde gratuit avec 500go ou 2to en tarif Professionnel. Service français rapide, sécurisé, respectueux de la vie privée et de l'environnement">    
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.min.css">
+    <title>Double helix - Connexion</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <!-- MAINHEADER -->
+        <header class="mainheader">
+            <div class="mainheader__content wrap">
+                <button class="mainheader__burger">
+                    <img src="assets/icons/menu.svg" alt="icon burger menu principale">
+                </button>
+
+                <nav class="mainheader__menuleft">
+                    <a href="decouvrir-dh.html" class="mainheader__link" title="lien vers page Découvrir">Découvrir DH</a>
+                    <a href="tarifs.html" class="mainheader__link" title="lien vers page Tarifs">Tarifs</a>
+                    <a href="contact.html" class="mainheader__link" title="lien vers page Contact">Contact</a>
+                </nav>
+
+                <a href="index.html" title="logo double helix" class="mainheader__logo">
+                    <img src="assets/icons/dna.svg" alt="image logo double helix">
+                </a>
+
+                <nav class="mainheader__menuright">
+                    <a href="connexion.html" title="icon profil" class="mainheader__avatar">
+                        <img src="assets/icons/profil.svg" alt="icon profil">
+                    </a>
+
+                    <a href="connexion.html" class="mainheader__linksigns mainheader__linksigns--login" title="lien vers page Connexion">connexion</a>
+                    <a href="inscription.html" class="mainheader__linksigns mainheader__linksigns--signup" title="lien vers page Inscription">inscription</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- INTRO CONNEXION SECTION -->
+        <section class="heroConnexion">
+            <div class="heroConnexion__content wrap">
+                <div class="heroConnexion__blocImage">
+                    <!-- TODO IMAGE Manquante -->
+                    <img width="640" height="640" src="assets/images/placeholder.jpg" alt="image hero illustration ">
+                </div>
+                <section class="formConnexion">
+                    <div class="formConnexion__content wrap">
+                        <form action="get" class="formConnexion__blocForm">
+                            <h1 class="heroConnexion__title">Connexion</h1>
+                            <div class="formConnexion__blocInput">
+                                <label for="email">Email<span>*</span></label>
+                                <input type="email" name="email" id="email" placeholder="exemple@email.com" required autocomplete="off">
+                            </div>
+                            <div class="formConnexion__blocInput">
+                                <div class="formConnexion__labelForgotPassword">
+                                    <label for="password">Mot de passe<span>*</span></label>
+                                    <a class="formConnexion__linkNewPassword" href="reset-password.html">Mot de passe oublié ?</a>
+                                </div>
+                                <input type="password" name="password" id="password" required autocomplete="off" placeholder="******">
+                            </div class="formConnexion__blocInput">
+                            <div class="formConnexion__blocCheck">
+                                <label for="checkbox">
+                                    <input type="checkbox" name="checkbox" id="checkbox">
+                                    <span>Se souvenir de moi</span>
+                                </label>
+                            </div>
+                            
+
+                            <button class="formConnexion__buttonSubmit" type="submit">Se connecter</button>
+
+                            <div class="formConnexion__bottomBlocToSU">
+                                <p>Vous n’avez pas encore de compte ?</p>
+                                <a class="formConnexion__linkToSignin" href="passwordReset.html">Inscrivez-vous</a>
+                            </div>
+                            
+                        </form>
+        
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!--FOOTER SECTION -->
+        <footer class="footer">
+            <div class="footer__content wrap">
+                
+                <section class="footer__top">
+                    <a href="index.html" title="logo double helix" class="footer__logo">
+                        <img width="24" height="24" loading="lazy" src="assets/icons/dna.svg" alt="image logo double helix">
+                    </a>
+                    <div class="footer__blocStores">
+                        <p>Disponible sur les applications mobiles</p>
+                        <div class="footer__storeBagdes">
+                            <a href="#/" class="footer__linkStore"><img width="197" height="158" src="assets/icons/brands/badges_stores/white/white_badge_apple_store.svg" alt="badge apple store"></a>
+                            <a href="#/" class="footer__linkStore"><img width="197" height="158" src="assets/icons/brands/badges_stores/white/white_badge_google_play.svg" alt="badge gougle play store"></a>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="footer__bottom">
+                    <a href="#/" class="footer__link">Conditions générales de vente</a>
+                    <a href="#/" class="footer__link">Politique de confidentialité</a>
+                    <a href="#/" class="footer__link">Mentions légales</a>
+                    <a href="#/" class="footer__link">Attestation conformité RGPD</a>
+                    <p>@2022 Double Helix By RJ</p>
+                </section>
+
+            </div>
+        </footer>
+
+    </div>
+    <script defer src="main.js"></script>    
+</body>
+</html>

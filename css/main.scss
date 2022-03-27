@@ -1,0 +1,1209 @@
+/* Resets */
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+
+@forward 'resets/normalize';
+@forward 'resets/reset.local';
+// * ============ BASES ============
+@use 'colors' as *;
+@use 'textStyle' as *;
+@use 'element/cta' as *;
+@use 'element/input' as *;
+
+
+
+//!====== CUSTOM ======
+// *============ GENERAL ============
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: $primary_color_col_60 ;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper{
+    height: 100%;
+    width: 100%;
+}
+.title_section{
+    @extend %title_section;
+}
+//====== Constrain containter ======
+.wrap{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+//====== MAINHEADER ======
+.mainheader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background-color: $neutral_color_col_white; 
+    transition: transform .5s cubic-bezier(0.25, 1, 0.5, 1);
+    // @extend %header_shadow;
+    &__content{
+        position: relative;
+        padding: 1rem;
+        display: flex;
+        width: 100%;
+    }
+
+    // left
+    &__menuleft {
+       order: 1;
+       display: none;
+       width: fit-content;
+       justify-content: space-around;
+       align-items: center;
+       gap: 0rem;
+    }
+    &__link{
+        @extend %primary_navbar;
+    }
+    &__burger {
+       display: initial;
+       order: 1;
+       margin-right: auto;
+       padding: .8rem;
+    }
+
+    // logo
+    &__logo {
+       order: 2;
+       margin: 0 auto;
+       border-radius: 50%;
+       background-color: $neutral_color_col_black;
+       width: 3.2rem;
+       height: 3.2rem;
+       padding: 1rem;
+       margin: 0;
+    }
+ 
+    // right
+    &__menuright {
+       order: 3;
+       margin-left: auto;
+       display: flex;
+       align-items: center;
+       gap: 2rem;
+    }
+    &__avatar {
+       margin-left: auto;
+    }
+    &__linksigns {
+        text-transform: uppercase;
+    }
+    &__linksigns--login {
+        @extend %secondary_navbar;
+        text-transform: uppercase;
+    }
+    &__linksigns--signup {
+        @extend %primary_small;
+        text-transform: uppercase;
+    }
+    
+    // &__link,
+    &__linksigns {
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+       display: flex;
+       justify-content: space-between;
+       &__menuleft {
+          order: 2;
+          display: flex;
+
+       }
+       &__menuright {
+           display: flex;
+       }
+       &__link,
+       &__linksigns {
+          display: flex;
+       }
+       &__burger,
+       &__avatar {
+          display: none;
+       }
+       &__logo {
+          order: 1;
+          margin: 0 2rem 0 0;
+       }
+    }
+}
+// MAINHEADER / ACTIVE CTA 
+.active {
+    display: block;
+}
+.menuactive {
+    display: flex;
+    padding: 4.8rem;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 4rem;
+    position: absolute;
+    height: 80vh;
+    z-index: 2;
+    bottom: -80vh;
+    inset: auto 1rem -80vh 0;
+    background-color: $primary_color_col_60;
+}
+
+
+
+//*============ LANDING PAGE STYLE ============
+//====== HERO SECTION ====== 
+.hero{
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 4rem 1.6rem 8rem;
+        gap: 3.2rem;
+    }
+
+    &__blocText{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3.2rem;
+    }
+    p{
+        width: 100%;
+        // color: $primary_color_col_30;
+    }
+
+    &__ctaGroup{
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+    }
+    &__cta:nth-of-type(1) {
+        @extend %primary_normal;
+    }
+    &__cta:nth-of-type(2) {
+        @extend %secondary_normal;
+    }
+    
+    &__blocImage{
+        flex: 1;
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+        justify-content: initial;
+        &__content{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 4rem 1.6rem 8rem;
+        }
+
+        // p{
+        //     color: $paragraph_color_p_color;
+        // }
+
+        &__blocText{
+            align-items: flex-start;
+            text-align: left;
+        }
+        
+        &__ctaGroup{
+            justify-content: flex-start;
+        }
+     }
+    @media screen and (min-width: 1000px) {
+        &__content{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 4rem 0 8rem;
+        }
+        &__blocImage{
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+//====== DASHBOARDPREVIEW SECTION ======
+.dashboardPreview{
+    &__content{
+        display: flex;
+        flex-direction: column;
+        padding: 80px 16px;
+        gap: 3.2rem;
+    }
+
+    &__blocText{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+    }
+    &__title{
+        text-align: center;
+    }
+    @media screen and (min-width: 768px) {
+        &__content{
+            padding: 80px 0;
+        }
+    }
+}
+
+//====== ADVANTAGE SECTION ======
+.advantage{
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8rem 1.6rem ;
+        gap: 6.4rem;
+    }
+
+    &__blocText{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.6rem;
+    }
+
+
+    &__blocCards{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3.2rem;
+    }
+    &__card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.6rem;
+        text-align: center;
+
+        padding: 4rem 3.2rem;
+        max-width: 32rem;
+        height: 32rem;
+        
+        background-color: $neutral_color_col_white;
+        @extend %card_shadow;
+        border-radius: 1.6rem;
+    }
+    figure{
+        width: 1.6rem;
+    }
+    &__cardTitle{
+        @extend %paragraph_special_title_card_advantage;
+    }
+    &__cta{
+        @extend %primary_normal;
+    }
+
+    @media screen and (min-width: 768px) {
+        &__blocCards{
+            align-items: stretch;
+            align-content: stretch;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        &__card{
+            justify-content: flex-start;
+            height: auto;
+            flex: 1;
+            height: auto;
+        }
+    }
+}
+
+// ====== COMPATIBILITY SECTION ======
+.compatibility{
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8rem 1.6rem ;
+        gap: 6.4rem;
+    }
+
+    &__blocText{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.6rem;
+    }
+
+    &__gallery{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2rem 1.6rem;
+        // gap: 16rem;
+        width: 100%;
+    }
+    &__icon{
+        width: 4.8rem;
+    } 
+    &__cardTitle{
+        @extend %paragraph_special_title_card_advantage;
+    }
+    &__cta{
+        @extend %primary_normal;
+    }
+
+    @media screen and (min-width: 768px) {
+        &__content{
+            padding: 8rem 0 16rem ;
+        }
+        &__gallery{
+            width: 60rem;
+        }
+        &__icon{
+            width: 8rem;
+        }
+    }
+}
+
+
+//====== PRICE SECTION ======
+.price{
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8rem 1.6rem ;
+        gap: 6.4rem;
+    }
+
+    &__blocText{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.6rem;
+    }
+
+    &__blocCards{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 3.2rem;
+        // width: max-content;
+    }
+    &__card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.6rem;
+        text-align: left;
+
+        padding: 4rem 3.2rem;
+        width: 100%;
+        max-width: 48rem;
+        height: fit-content;
+        
+        background-color: $neutral_color_col_white;
+        @extend %card_shadow;
+        border-radius: 1.6rem;
+
+        // cta
+        a{
+            white-space: nowrap;
+        }
+        &:nth-of-type(1) a, &:nth-of-type(3) a{
+            @extend %secondary_normal;
+        }
+        &:nth-of-type(2) a{
+            @extend %primary_normal;
+        }
+    }
+    &__cardTitle{
+        @extend %paragraph_special_title_card_price;
+        span{
+            @extend p;
+        }
+    }
+    &__desc{
+        color: $primary_color_col_30;
+    }
+    &__boxCheck{
+        display: flex;
+        justify-content: space-between;
+        gap: 1.6rem;
+        figure{
+            width: 3.2rem;
+        }
+        img{
+            padding: 0.8rem;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__cta{
+        @extend %tertiary_normal;
+    }
+
+    @media screen and (min-width: 768px) {
+        &__content{
+            padding: 8rem 0 16rem ;
+        }
+        &__card{
+            width: 100%;
+            flex: 1 ;
+        }
+    }
+    @media screen and (min-width: 1080px) {
+        &__blocCards{
+            flex-direction: row;
+            width: max-content;
+        }
+        &__card{
+            max-width: 32rem;
+            flex: 1;
+        }
+    }
+}
+
+//====== REVIEW SECTION ======
+.review{
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8rem 0 16rem ;
+        gap: 6.4rem;
+        position: relative;
+
+    }
+
+    &__blocText{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.6rem;
+    }
+
+    &__blocCards{
+        display: flex;
+        align-items: stretch;
+        align-content: stretch;
+        gap: 3.2rem;
+        padding: 0 1.6rem ;
+        margin-bottom: -6.4rem;
+        position: relative;
+    }
+    &__card{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3.2rem;
+        text-align: center;
+        opacity: 0;
+        padding: 4rem 3.2rem;
+        max-width: 60rem;
+        
+        background-color: $neutral_color_col_white;
+        @extend %card_shadow;
+        border-radius: 1.6rem;
+        filter: blur(10px);
+    }
+    // box profil client
+    &__profil{
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+    &__name{
+        @extend %paragraph_special_client_name;
+    }
+    &__job{
+        @extend %paragraph_special_client_job;
+    }
+
+    // cta
+    &__ctaGroup{
+        display: flex;
+        justify-content:center;
+        width: 100%;
+        gap: 3.2rem;
+        position: absolute;
+        justify-content: space-between;
+        top: 4rem;
+        left: 0;
+        right: 0;
+    }
+    &__button{
+        @extend %primary_normal;
+        display: flex;
+        text-align: center;
+        img{
+            color: wheat;
+        }
+    }
+
+    // box quote
+    &__boxStars{
+        display: flex;
+        justify-content: center;
+        gap: 1.6rem;
+    }
+    &__star{
+        max-width: 2.2rem;
+    }
+
+    &__quote{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 3.2rem;
+        p{
+            @extend %paragraph_p_avis_clients_mobile;
+        }
+    }
+    &__quotationMark{
+        width: 4.8rem;
+        margin: 0 auto; 
+    }
+
+    //* current card + animation
+    .currentCard{
+        display: flex;
+        background-color: $neutral_color_col_white;
+        animation: reveal .4s ease forwards;
+    }
+
+    @media screen and (min-width: 768px) {
+        &__blocCards{
+            justify-content: center;
+        }
+    }
+}
+// anim
+@keyframes reveal {
+    100%{
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+//====== PARTNERS SECTION ======
+.partners{ 
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8rem 1.6rem 20rem ;
+        gap: 6.4rem;
+    }
+    
+    &__blocText{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.6rem;
+    }
+
+
+    &__blocLogos{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: stretch;
+        align-content: space-around;
+        flex-wrap: wrap;
+        max-width: 48rem;
+        gap: 3.2rem;
+    }
+    &__logo{
+        flex: 1;
+        min-width: 6.4rem;
+        max-width: 24rem;
+        display: grid;
+        place-items: center;
+    }
+    img{
+       min-width: 100%;
+       height: fit-content;
+    }
+
+    &__cta{
+        @extend %primary_normal;
+    }
+
+    @media screen and (min-width: 1080px) {
+        &__content{
+            padding: 8rem 0 20rem;
+        }
+        &__blocLogos{
+            max-width: 48rem;
+        }
+    }
+    
+}
+
+//====== FOOTER ======
+.footer{
+    background-color: $neutral_color_col_white;
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3.2rem 1.6rem;
+        gap: 3.2rem;
+    }
+    
+    // top
+    &__top{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.4rem;
+    }
+    &__logo{
+        overflow: hidden;
+        display: flex;
+        border-radius: 12rem;
+        background-color: $neutral_color_col_black;
+        width: 12rem;
+        height: 12rem;
+        padding: 1rem;
+        // img{
+        //     width: fit-content;
+        //     margin: 0 auto;
+        // }
+    }
+    &__blocStores{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.4rem;
+        p{
+            @extend %footer_footer_text;
+            color: $primary_color_col_30;
+            text-align: center;
+        }
+    }
+    &__storeBagdes{
+        display: flex;
+        flex-direction: column;
+        // align-items: flex-start;
+        gap: 2rem;
+    }
+    &__linkStore{
+        overflow: hidden;
+        border: 1px solid $primary_color_col_10;
+        border-radius: 1.6rem;
+        display: block;
+        max-width: 19.7rem;
+    }
+
+
+    // bottom
+    &__bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.6rem;
+        > *{
+            color: $primary_color_col_30;
+            text-align: center;
+            width: fit-content;
+        }
+        a{
+            @extend %link_small;
+        }
+        p{
+            @extend %footer_footer_text;
+            color: $primary_color_col_30;
+            text-align: center;
+            width: fit-content;
+        }
+    }
+
+    @media screen and (min-width: 960px) {
+        &__content{
+            padding: 4rem 1.6rem;
+            gap: 8rem;
+        }
+        &__top{
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        &__storeBagdes{
+            flex-direction: row;
+        }
+        &__bottom{
+            flex-direction: row;
+            justify-content: space-between;
+            white-space: nowrap;
+        }
+    }
+
+}
+
+
+
+
+
+//*============ DECOUVRIR PAGE STYLE ============
+//====== NAVINTERNAL ======
+.navInternal{
+    &__content{
+        display: flex;
+        justify-content: center;
+        padding: 4rem 1.6rem ;
+        gap: 3.2rem;
+    }
+
+    &__cta {
+        @extend %primary_normal;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+        &__content{
+            gap: 6.4rem;
+            flex-wrap: wrap;
+        }
+        &__cta {
+            width: fit-content;
+        }
+        
+     }
+    @media screen and (min-width: 1000px) {
+        &__content{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 4rem 0 8rem;
+            gap: 6.4rem;
+        }
+    }
+}
+
+//====== PROJET ======
+.projet{
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8rem 1.6rem;
+        gap: 3.2rem;
+        max-width: 60rem;
+    }
+
+    &__blocText{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.6rem;
+    }
+    &__title{
+        text-align: center;
+    }
+    
+    &__texts{
+        p{
+            margin-bottom: 1.6rem;
+        }
+        a{
+            display: inline;
+            color: $primary_color_col_10;
+        }
+    }
+    &__cta{
+        @extend %primary_normal;
+        width: fit-content;
+    }
+    @media screen and (min-width: 1000px) {
+        &__content{
+            padding: 8rem 0;
+        }
+    }
+}
+
+//====== EQUIPE ======
+.equipe{
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8rem 1.6rem;
+        gap: 6.4rem;
+    }
+
+    &__blocText{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.6rem;
+        max-width: 60rem;
+    }
+    &__title{
+        text-align: center;
+    }
+    
+    &__blocCards{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5.6rem;
+    }
+    &__card{
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 32rem;
+        background-color: $neutral_color_col_white;
+        border-radius: 1.6rem;
+        figure{
+            overflow: hidden;
+            height: 24rem;
+        }
+    }
+
+    &__profil{
+        display: flex;
+        flex-direction: column;
+        padding: 3.2rem ;
+        gap: 1.6rem;
+    }
+    &__firstname, &__lastname{
+        @extend %paragraph_special_card_member_id;
+    }
+    &__socialmedia{
+        display: flex;
+        justify-content: center;
+        gap: 1.6rem;
+    }
+    &__smLink{
+        width: 2rem;
+    }
+
+
+    &__cta{
+        @extend %primary_normal;
+        width: fit-content;
+    }
+    
+    @media screen and (min-width: 1000px) {
+        &__content{
+            padding: 8rem 0;
+            
+        }
+
+        &__card{
+            width: fit-content;
+        }
+    }
+}
+
+
+//*============ TARIFS PAGE STYLE ============
+.navInternal{
+    &__cta{
+        &--ctacomparatif{
+            @extend %secondary_normal;
+            background-color: transparent;
+            white-space: nowrap;
+        }
+    }
+}
+.comparatif{
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8rem 1.6rem ;
+        gap: 6.4rem;
+    }
+
+    &__blocText{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.6rem;
+    }
+
+    // !TABLE
+    &__blocTable{
+        width: 100%;
+        overflow: auto;
+
+    }
+    &__table{
+        width: 96rem;
+        max-width: 100%;
+        border-collapse: collapse;
+    }
+    th,td{
+        padding: 1.2rem 1.6rem;
+    }
+    thead{
+        @extend %table_table_formule_title;
+        text-align: right;
+        th:first-child{
+            text-align: left;
+		    // font-size:2.4rem;
+        }
+    }
+    tbody{
+        @extend %table_table_row_content;
+        text-align: right;
+        tr:nth-child(2n + 1){
+            background-color: $table_color_table_row_odd;
+        }
+        td:first-child{
+            text-align: left;
+        }
+        img{
+            max-width: 1.6rem;
+            display: inline;
+        }
+    }
+    
+
+
+    @media screen and (min-width: 768px) {
+        &__content{
+            padding: 8rem 0 16rem ;
+        }
+        thead{
+            th:first-child{
+                font-size:2.4rem;
+            }
+        }
+    }
+}
+
+//*============ CONTACT PAGE STYLE ============
+.heroContact{
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 4rem 1.6rem;
+        gap: 3.2rem;
+    }
+
+    &__blocText{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3.2rem;
+    }
+    &__title{
+        font-size:4rem;
+    }
+}
+.form{
+    flex: 1;
+    &__content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:0 0 16rem;
+        gap: 3.2rem;
+    }
+    p{
+        flex: 1;
+    }
+    &__blocForm{
+        // background-color: red;
+        border-radius: 1.6rem;
+        background-color: $primary_color_col_60;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+        width: 100%;
+        max-width: 60rem;
+        padding: 4rem 3.2rem;
+    }
+    &__blocInput{
+        display: flex;
+        flex-direction: column;
+        gap: .8rem;
+        span{
+            padding-left: .4rem;
+            color: $form_color_error_input_info;
+        }
+    }
+    textarea{
+        min-height: 16rem;
+        max-width: 100%;
+    }
+    select{
+        appearance: none;
+        color: $form_color_placeholder_color;
+        background: url("../assets/icons/dropdown_form.svg") right 1.6rem center no-repeat $neutral_color_col_white;
+    }
+    select option{
+        background-color: $neutral_color_col_white;
+        color: $form_color_placeholder_color;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+    &__buttonSubmit{
+        @extend %primary_normal;
+        width: 100%;
+    }
+}
+
+//TODO============ CONNEXION PAGE STYLE ============
+ .heroConnexion{
+    //  height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: $primary_color_col_60;
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 4rem 0 16rem;
+        gap: 3.2rem;
+    }
+
+    &__blocImage{
+        display: none;
+    }
+
+    &__blocText{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3.2rem;
+    }
+    &__title{
+        font-size:4rem;
+        text-align: center;
+    }
+    @media screen and (min-width: 1000px) {
+        &__blocImage{
+            display: flex;
+            flex: 1;
+        }
+    }
+
+ }
+
+
+ .formConnexion, .formSignUp{
+    flex: 1;
+    max-width: 40rem;
+    &__content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3.2rem;
+    }
+    &__blocForm{
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+        width: 100%;
+        max-width: 60rem;
+        padding: 4rem 3.2rem;
+    }
+    &__blocInput{
+        display: flex;
+        flex-direction: column;
+        gap: .8rem;
+        span{
+            padding-left: .4rem;
+            color: $form_color_error_input_info;
+        }
+    }
+    &__labelForgotPassword{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__blocCheck label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.6rem;
+    }
+    &__linkNewPassword{
+        @extend %form_form_p_small;
+        color: $primary_color_col_10;
+    }
+
+    &__blocCta{
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+    &__buttonSubmit{
+        @extend %primary_normal;
+        width: 100%;
+    }
+    &__return{
+        @extend %tertiary_normal;
+    }
+
+    &__bottomBlocToSU{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    p{
+        @extend %form_form_p_small; 
+        text-align: center;
+    }
+    &__linkToSignin{
+        @extend %link_form_normal;
+        color: $primary_color_col_10;
+    }
+
+    @media screen and (min-width: 1000px) {
+        max-width: 60rem;
+    }
+    
+ }
+//*============ INSCRIPTION PAGE STYLE ============
+.formSignUp{
+    &__pdc{
+        display: flex;
+    }
+    p{
+        @extend %form_form_p_small; 
+        text-align: left;
+    }
+    &__linkPdc{
+        @extend %link_form_normal;
+        color: $primary_color_col_10;
+    }
+}

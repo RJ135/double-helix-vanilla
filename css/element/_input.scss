@@ -1,0 +1,59 @@
+@use '../colors' as *;
+@use '../textStyle' as *;
+//* FORM
+label{
+	@extend %form_form_label;
+}
+input,textarea,select{
+    // layout
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.2rem 1.6rem;
+
+    // font
+    @extend %form_form_input_enter;
+    color: $neutral_color_col_black;
+    &::placeholder {
+        @extend %form_form_input_placeholder;
+        color: $form_color_placeholder_color;
+    }
+    
+    // special
+    border-radius: 8px;
+    background-color: $neutral_color_col_white;
+    
+    &, &:target, &:focus{
+        border: none;
+    }
+    &:target, &:focus{
+        outline: 2px solid $primary_color_col_10;
+    }
+
+    &:focus{
+        @extend %form_form_input_enter;
+    }
+}
+textarea{
+    color: $form_color_placeholder_color;
+}
+
+//TODO JS states 
+// check https://css-tricks.com/form-validation-ux-html-css/
+input[type="email"],
+input[type="password"]{
+    &:valid:not(:placeholder-shown){
+        outline: 2px solid $form_color_valid_input_border;
+        background:$neutral_color_col_white url('../../assets/icons/valid.svg') right 1.6rem center no-repeat;
+    }
+    &:invalid:not(:focus):not(:placeholder-shown){
+        outline: 2px solid $form_color_error_input_info;
+        background: $neutral_color_col_white url('../../assets/icons/error.svg') right 1.6rem center no-repeat;
+    }
+}
+// Checkbox
+input[type="checkbox"]{
+    accent-color: $primary_color_col_10;
+}
+
+// label asterix

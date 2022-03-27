@@ -1,0 +1,37 @@
+// primary
+$primary_color_col_10: #381fd2;
+$primary_color_col_10_hover: #5740e2;
+$primary_color_col_30: #1d1a2d;
+$primary_color_col_60: #f1ebe5;
+// $primary_color_col_60: #faf8f6; couleur initial
+
+// secondary
+$secondary_color_col_alt_1: #a69af0;
+$secondary_color_col_alt_2: #fd6f6b;
+$secondary_color_col_alt_3: #fedb63;
+$secondary_color_col_alt_4: #99d7cc;
+
+// neutral
+$neutral_color_col_black: #000000;
+$neutral_color_col_white: #ffffff;
+
+// paragraph
+$paragraph_color_p_color: #4b4b4e;
+$table_color_line_color: #4b4b4e59;
+$table_color_table_row_odd: #eae1d7;
+$card_shadow_color :#654a3021;
+
+// form
+$form_color_placeholder_color: #7a6dca;
+$form_color_focus_placeholder: #e1f5f2;
+$form_color_valid_input_border: #8ed5c9;
+$form_color_valid_input_info: #30c9ae;
+$form_color_error_input_info: #e84f4a;
+
+// shadow
+%card_shadow {
+	box-shadow: 0px 3.2rem 3.2rem $card_shadow_color;
+}
+%header_shadow {
+	box-shadow: 0px 1.2rem 3.2rem $primary_color_col_60;
+}

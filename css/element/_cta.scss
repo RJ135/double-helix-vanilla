@@ -1,0 +1,329 @@
+@use '../colors' as *;
+@use '../textStyle' as *;
+
+//* CTA PRIMARY
+%primary_normal{
+    // layout
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+
+    // font
+    @extend %cta_default_cta_default;
+    text-align: center;
+    
+    // color
+    background: $primary_color_col_10;
+    color: $neutral_color_col_white;
+    
+    // special
+    border-radius: 8px;
+
+    &:hover,&:focus{
+        background: $primary_color_col_10_hover;
+    }
+}
+
+%primary_small{
+    // layout
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 20px;
+    
+    // font
+    @extend %cta_small_font_btn_small;
+    text-align: center;
+
+    // color
+    background: $primary_color_col_10;
+    color: $neutral_color_col_white;
+
+    // special
+    border-radius: 8px;
+
+    &:hover,&:focus{
+        background: $primary_color_col_10_hover;
+    }
+}
+
+%primary_navbar{
+    // layout
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 20px;
+
+    // font
+    @extend %cta_default_cta_default_main_menu;
+    text-transform: uppercase;
+    text-align: center;
+
+    // color
+    color: initial;
+
+    // special
+    border-radius: 8px;
+    &:hover,&:focus{
+        color: $primary_color_col_10;
+    }
+}
+
+
+
+
+//* CTA SECONDARY
+%secondary_normal{
+    // layout
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    
+    // font
+    @extend %cta_default_cta_default;
+    text-align: center;
+    
+    // color
+    color: $primary_color_col_30;
+
+    // special
+    border: 2px solid $primary_color_col_30;
+    border-radius: 8px;
+    &:hover, &:focus{
+        color: $neutral_color_col_white;
+        background: $primary_color_col_30;
+    }
+}
+
+%secondary_small{
+    // layout
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 20px;
+
+    // font
+    @extend %cta_default_cta_default;
+    text-align: center;
+    
+    // color
+    color: $primary_color_col_30;
+
+    // special
+    border: 2px solid $primary_color_col_30;
+    border-radius: 8px;
+    &:hover, &:focus{
+        color: $neutral_color_col_white;
+        background: $primary_color_col_30;
+    }
+}
+
+%secondary_navbar{
+    // layout
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 20px;
+
+    // font
+    @extend %cta_default_cta_default_main_menu;
+    text-transform: uppercase;
+    text-align: center;
+
+    // color
+    color: $primary_color_col_30;
+
+    // special
+    outline:  2px solid $primary_color_col_30;
+    border-radius: 8px;
+    &:hover, &:focus{
+        color: $neutral_color_col_white;
+        background: $primary_color_col_30;
+    }
+}
+
+
+//* CTA TERTIARY
+%tertiary_normal{
+    // layout
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+
+    // font
+    @extend %cta_default_cta_default;
+    text-align: center;
+    
+    // color
+    color: $primary_color_col_10;
+
+    // special
+    border-radius: 8px;
+    &:hover, &:focus{
+        text-decoration: underline solid $primary_color_col_10;
+    }
+}
+
+%tertiary_small{
+    // layout
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 20px;
+
+    // font
+    @extend %cta_small_font_btn_small;
+    text-align: center;
+    
+    // color
+    color: $primary_color_col_10;
+
+    // special
+    border-radius: 8px;
+    &:hover, &:focus{
+        text-decoration: underline solid $primary_color_col_10;
+    }
+}
+
+
+
+//* LINK
+%link_normal {
+    // layout
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    // font
+    @extend %cta_default_cta_default;
+    text-align: center;
+    
+    // color
+    color: $primary_color_col_10;
+
+    // special
+    &:hover, &:focus{
+        @extend %cta_default_cta_default_link_hover;
+        text-decoration: underline solid $primary_color_col_10;
+    }
+}
+
+%link_small {
+    // layout
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    // font
+    @extend %cta_small_link_small;
+    text-align: center;
+    
+    // color
+    color: $primary_color_col_10;
+
+    // special
+    &:hover, &:focus{
+        @extend %cta_small_link_hovered_small;
+        text-decoration: underline solid $primary_color_col_10;
+    }
+}
+
+
+
+//* LINK FORM
+%link_form_normal {
+    // layout
+
+    // font
+    @extend %form_form_p_small;
+    text-align: center;
+    
+    // color
+    color: $primary_color_col_10;
+
+    // special
+    &:hover, &:focus{
+        text-decoration: underline solid $primary_color_col_10;
+    }
+}
+
+
+
+
+//* BUTTON ICON
+%btn_icon {
+    @extend %primary_normal;
+
+    // special
+    padding: 16px 20px;
+}
+
+
+
+//* DASHBOARD PRIMARY ICON
+%primary_dashboard_normal{
+    // layout
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+
+    // font
+    @extend %cta_default_cta_default;
+    text-align: center;
+    
+    // color
+    color: $primary_color_col_30;
+    
+    // special
+    border-radius: 8px;
+
+    &:hover,&:focus{
+        background: $primary_color_col_60;
+    }
+}
+
+
+%primary_dashboard_small{
+    @extend %primary_dashboard_normal;
+
+    // special
+    padding: 12px 20px;
+}
+
+
+//* DASHBOARD SECONDARY ICON
+%secondary_dashboard_normal{
+    @extend %primary_dashboard_normal;
+
+    // special
+    border: 2px solid $primary_color_col_30;
+
+    &:hover,&:focus{
+        background: $primary_color_col_30;
+        color: $neutral_color_col_white;
+    }
+}
+
+
+%secondary_dashboard_small{
+    @extend %secondary_dashboard_normal;
+
+    // special
+    padding: 12px 20px;
+}
+
