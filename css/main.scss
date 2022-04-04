@@ -11,7 +11,6 @@
 
 
 
-//!====== CUSTOM ======
 // *============ GENERAL ============
 html{
     scroll-behavior: smooth;
@@ -33,6 +32,9 @@ body{
     margin: 0 auto;
 }
 
+
+//!====== CUSTOM ======
+
 //====== MAINHEADER ======
 .mainheader {
     position: fixed;
@@ -42,7 +44,6 @@ body{
     z-index: 3;
     background-color: $neutral_color_col_white; 
     transition: transform .5s cubic-bezier(0.25, 1, 0.5, 1);
-    // @extend %header_shadow;
     &__content{
         position: relative;
         padding: 1rem;
@@ -67,17 +68,19 @@ body{
        order: 1;
        margin-right: auto;
        padding: .8rem;
+       img{
+           width: 100%;
+           height: auto;
+       }
     }
 
     // logo
     &__logo {
        order: 2;
        margin: 0 auto;
-       border-radius: 50%;
-       background-color: $neutral_color_col_black;
-       width: 3.2rem;
-       height: 3.2rem;
-       padding: 1rem;
+       width: 4rem;
+       height: auto;
+    //    padding: 1rem;
        margin: 0;
     }
  
@@ -196,6 +199,9 @@ body{
     &__blocImage{
         flex: 1;
         display: none;
+        img{
+            object-fit: fill;
+        }
     }
 
     @media screen and (min-width: 768px) {
@@ -205,10 +211,6 @@ body{
             flex-wrap: wrap;
             padding: 4rem 1.6rem 8rem;
         }
-
-        // p{
-        //     color: $paragraph_color_p_color;
-        // }
 
         &__blocText{
             align-items: flex-start;
@@ -228,6 +230,8 @@ body{
         &__blocImage{
             display: flex;
             justify-content: center;
+            transform: scale(1.3);
+            z-index: -1;
         }
     }
 }
@@ -667,7 +671,7 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 3.2rem 1.6rem;
+        padding: 16rem 1.6rem;
         gap: 3.2rem;
     }
     
@@ -681,11 +685,8 @@ body{
     &__logo{
         overflow: hidden;
         display: flex;
-        border-radius: 12rem;
-        background-color: $neutral_color_col_black;
-        width: 12rem;
-        height: 12rem;
-        padding: 1rem;
+        width: 20rem;
+        height: auto;
         // img{
         //     width: fit-content;
         //     margin: 0 auto;
@@ -742,13 +743,17 @@ body{
 
     @media screen and (min-width: 960px) {
         &__content{
-            padding: 4rem 1.6rem;
+            padding: 16rem 1.6rem;
             gap: 8rem;
         }
         &__top{
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
+        }
+        &__logo{
+            width: auto;
+            height: 12rem;
         }
         &__storeBagdes{
             flex-direction: row;
@@ -795,7 +800,7 @@ body{
         &__content{
             display: flex;
             flex-wrap: wrap;
-            padding: 4rem 0 8rem;
+            padding: 4rem 0 8rem ;
             gap: 6.4rem;
         }
     }
@@ -829,8 +834,15 @@ body{
         }
         a{
             display: inline;
+            all: reset;
             color: $primary_color_col_10;
+            &:hover{
+                text-decoration: underline
+            }
         }
+    }
+    &__blocImage{
+        display: none;
     }
     &__cta{
         @extend %primary_normal;
@@ -839,6 +851,10 @@ body{
     @media screen and (min-width: 1000px) {
         &__content{
             padding: 8rem 0;
+        }
+        &__blocImage{
+            display: block;
+
         }
     }
 }
@@ -1077,9 +1093,9 @@ body{
     }
 }
 
-//TODO============ CONNEXION PAGE STYLE ============
+//============ CONNEXION PAGE STYLE ============
  .heroConnexion{
-    //  height: 100vh;
+     height: 100vh;
      display: flex;
      align-items: center;
      justify-content: center;
@@ -1096,6 +1112,9 @@ body{
 
     &__blocImage{
         display: none;
+        img{
+            width: 100%;
+        }
     }
 
     &__blocText{

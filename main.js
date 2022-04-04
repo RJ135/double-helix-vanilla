@@ -23,11 +23,11 @@ if (clientWidth > 768) {
 
     window.addEventListener("scroll", () => {
         if (lastScrollY < window.scrollY) {
-            // header.classList.add("mainheader--hidden");
+            header.classList.remove("mainheader--hidden");
             header.style.transform = `translateY(${-1 * headerHeight}px )`;
 
         } else {
-            // header.classList.remove("mainheader--hidden");
+            header.classList.add("mainheader--hidden");
             header.style.transform = `initial`;
         }
         lastScrollY = window.scrollY;
