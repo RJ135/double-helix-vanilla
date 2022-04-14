@@ -405,42 +405,42 @@ fieldset {
 }
 
 .advantage__card, .price__card, .review__card {
-  box-shadow: 0px 3.2rem 3.2rem #654a3021;
+  box-shadow: 0px 3.2rem 3.2rem rgba(101, 74, 48, 0.1294117647);
 }
 
 @font-face {
   font-family: "PoppinsLight";
-  src: url("../assets/fonts/poppins/Poppins-Light.ttf") format("truetype");
+  src: url("../assets/fonts/poppins/Poppins-Light.ttf") format("truetype"), url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "PoppinsRegular";
-  src: url("../assets/fonts/poppins/Poppins-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/poppins/Poppins-Regular.ttf") format("truetype"), url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "PoppinsMedium";
-  src: url("../assets/fonts/poppins/Poppins-Medium.ttf") format("truetype");
+  src: url("../assets/fonts/poppins/Poppins-Medium.ttf") format("truetype"), url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "PoppinsSemiBold";
-  src: url("../assets/fonts/poppins/Poppins-SemiBold.ttf") format("truetype");
+  src: url("../assets/fonts/poppins/Poppins-SemiBold.ttf") format("truetype"), url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "PoppinsBold";
-  src: url("../assets/fonts/poppins/Poppins-Bold.ttf") format("truetype");
+  src: url("../assets/fonts/poppins/Poppins-Bold.ttf") format("truetype"), url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "PoppinsExtraBold";
-  src: url("../assets/fonts/poppins/Poppins-ExtraBold.ttf") format("truetype");
+  src: url("../assets/fonts/poppins/Poppins-ExtraBold.ttf") format("truetype"), url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
   font-weight: 800;
   font-style: normal;
 }
@@ -820,10 +820,6 @@ input[type=checkbox] {
 }
 
 /* Resets */
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: #f1ebe5;
   font-family: Arial, Helvetica, sans-serif;
@@ -935,8 +931,8 @@ body {
   display: flex;
   padding: 4.8rem;
   flex-direction: column;
-  align-items: start;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 4rem;
   position: absolute;
   height: 80vh;
